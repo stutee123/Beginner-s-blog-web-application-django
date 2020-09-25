@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="boxes">
+<div class="block">
+    <ul >
+        <br/><br/>{% for blog in blogs %}
+        <li><strong style="font-size: x-large;">{{blog.title}}</strong><br/>
+            <p style='font-size: x-small;'> {{blog.created_at}}</p>
+            <p style='line-height: 1.2em;height: 1.2em;overflow: hidden;text-align: justify;'>
+            {{blog.body}}<br/><br/>
+            </p>
+            <a href="{% url 'details' blog_id=blog.id %}">see more </a><br/><br/><br/>
+        </li>   
+        {% endfor %}
+    </ul> 
+</div>
+</section>
+{% endblock content %}
